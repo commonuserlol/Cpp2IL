@@ -522,7 +522,7 @@ internal class Program
 
         if (options.ForcedBinaryPath == null)
         {
-            ResolvePathsFromCommandLine(options.GamePath, options.ExeName, ref result);
+            ResolvePathsFromCommandLine(options.GamePath.Replace("~", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)), options.ExeName, ref result);
         }
         else
         {
